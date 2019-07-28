@@ -38,6 +38,8 @@ window.onload=function(){
         var userName = $("#input_id").val();
         var password = $("#input_password").val();
         if (checkIfNull(userName,password)){
+           $("#wait_box").css("display","block");
+           changeDot();
            checkPassword(userName,password);
         }
     })
@@ -45,6 +47,18 @@ window.onload=function(){
     $("#register").click(function(){
       window.open("https://github.com/join");
     })
+}
+
+//动态改变登录提示框中的省略号个数
+function changeDot(){
+    var s = $("#dot").text();
+    if (s != "..."){
+      s = s+".";
+    }else{
+      s = "";
+    }
+    $("#dot").text(s);
+    setTimeout("changeDot()",500);
 }
 
 //检查输入账号和密码是否为空,返回true-正确、false-存在空
@@ -71,7 +85,8 @@ function checkPassword(userName,password){
 		},
           //登录成功
           success: function (data) {
-          	$("#login_box").slideUp("slow");
+            $("#wait_box").css("display","none");
+          	$("#login_box").css("display","none");
           	$("#login").css("display","none");
           	$("#status_username").html(userName);
           	$("#login_status").css("display","block");
@@ -79,6 +94,7 @@ function checkPassword(userName,password){
 
           //登录失败
           error: function (err) {
+            $("#wait_box").css("display","none");
           	$("#login_warn").css("display","block");
           }
 
