@@ -41,6 +41,10 @@ window.onload=function(){
            checkPassword(userName,password);
         }
     })
+
+    $("#register").click(function(){
+      window.open("https://github.com/join");
+    })
 }
 
 //检查输入账号和密码是否为空,返回true-正确、false-存在空
