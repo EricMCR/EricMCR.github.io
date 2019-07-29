@@ -172,9 +172,38 @@ button{
 #login_status{
 	color: #ffffff;
 	position: relative;
-	left: 500px;
+	left: 460px;
 	display: none;
-	font-size: 15px;
+	font-size: 17px;
+    width: 200px;
+    height: 40px;
+}
+
+#avatar_small{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: -120px;
+    top: 5px;
+}
+
+#status_username{
+    position: absolute;
+    left: 40px;
+    top: 10px;
+}
+
+#sign_out{
+    cursor: pointer;
+    position: absolute;
+    left: 150px;
+    top: 5px;
+    border: 1px solid;
+    border-radius: 5px;
+    width: 50px;
+    height: 30px;
+    font-size: 17px;
+    text-align: center;
 }
 
 #option_box {
@@ -450,8 +479,4 @@ button{
     left: 585px;
     top: 360px;
     display: none;
-}
-
-#sign_out{
-    cursor: pointer;
 }
