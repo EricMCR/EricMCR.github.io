@@ -22,10 +22,11 @@
             </div>
             <div class="login" id="login">
                 <img src="images/index/u60.png">
-                <a href="javascript:void(0);" οnclick="loginBox()">Log in</a>
+                <a>Log in</a>
             </div>
             <div id="login_status">
             	<p>用户：<span id="status_username"></span></p>
+                <div id="sign_out"> 注销 </div>
             </div>
         </div>
         <div class="content">
@@ -77,7 +78,7 @@
                             <img src="images/index/u36.png">
                         </div>
                         <div class="btn">
-                            <a href="#">进入知识库</a>
+                            <a href="知识库.html">进入知识库</a>
                         </div>
                     </div>
                 </div>
@@ -150,6 +151,7 @@
         		<input type="password" name="" id="input_password" placeholder="请输入密码">
         		<p id="pw_warn" class="warn">密码不能为空！</p>
         		<p id="login_warn" class="warn">用户名或密码错误！</p>
+                <p><input type="checkbox" id="rememberpw"> 记住密码</p>
         	</div>
         	<button id="submit" class="login_button">登陆</button>
         	<button id="register" class="login_button">注册</button>
