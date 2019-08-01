@@ -4,6 +4,8 @@ window.onload = function () {
     var avatar_url = getCookie("avatar");
     if (avatar_url != "" && avatar_url != null){
         $("#avatar").attr("src",avatar_url);
+    }else{
+        $("#avatar").attr("src","");
     }
 
     //获取全部元素
