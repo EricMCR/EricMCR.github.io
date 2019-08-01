@@ -11,6 +11,12 @@ window.onload=function(){
     $("#login_status").css("display","block");
   }
 
+  //加载头像
+  var avatar_url = getCookie("avatar");
+  if (avatar_url != "" && avatar_url != null){
+    $("#avatar_small").attr("src",avatar_url);
+  }
+
   var oldname = getCookie("oldname");
   if (oldname != "" && oldname != null){
     $("#input_id").val(oldname);
