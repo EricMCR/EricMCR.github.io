@@ -1,5 +1,9 @@
 window.onload=function(){
 
+  // $(".header").css("width",$(document).width());
+  // $(".content").css("width",$(document).width());
+  // $(".column").css("width",$(document).width());
+
   var username = getCookie("username");
   if (username != "" && username != null){
     $("#login").css("display","none");
@@ -58,6 +62,8 @@ window.onload=function(){
    $("#login_warn").css("display","none");
  })
 
+  changeDot();
+
   $("#submit").click(function(){
    $("#id_warn").css("display","none");
    $("#pw_warn").css("display","none");
@@ -66,7 +72,7 @@ window.onload=function(){
    var password = $("#input_password").val();
    if (checkIfNull(userName,password)){
      $("#wait_box").css("display","block");
-     changeDot();
+     
      checkPassword(userName,password);
    }
  })
@@ -105,14 +111,17 @@ function checkIfNull(userName,password){
 function checkPassword(userName,password){
 	var btoa = window.btoa(userName + ":" + password);//用户信息编码
 	$.ajax({
-		url: "https://api.github.com/users/"+userName+"/repos",
+		url: "https://api.github.com/users/"+userName,
 		type: "GET",
 		headers: {
 			'Authorization': "Basic " + btoa
 		},
           //登录成功
           success: function (data) {
+            var json = JSON.stringify(data);
+            var obj = eval ("(" + json + ")");
             setCookie("username",userName,3);
+            setCookie("avatar",obj.avatar_url);
             setCookie("oldname",userName,30);
             if ($("#rememberpw").prop("checked")){
               setCookie("oldpw",password,7);
@@ -124,6 +133,7 @@ function checkPassword(userName,password){
             $("#wait_box").css("display","none");
             $("#login_box").css("display","none");
             $("#login").css("display","none");
+            $("#avatar_small").attr("src",obj.avatar_url);
             $("#status_username").html(userName);
             $("#login_status").css("display","block");
           },
@@ -160,4 +170,24 @@ function getCookie(cname) {
     }
   }
   return "";
+}
+
+//获取json
+function getJson(url){
+  var json;
+  $.ajax({
+    url:url,
+    type:"GET",
+    async:false,
+    success:function(data){
+      var json1 = JSON.stringify(data);
+      var obj = eval ("(" + json1 + ")");
+      var content = decodeURIComponent(escape(window.atob(obj.content)));
+      json = JSON.parse(content);
+    },
+    error:function(err){
+      alert(err);
+    }
+  })
+  return json;
 }

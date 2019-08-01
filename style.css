@@ -7,8 +7,12 @@ button{
 	outline: none;
 }
 
+.container{
+    margin:0 auto;
+}
+
 .header{
-    width: 100%;
+    width: 1440px;
     height: 50px;
     background-color: #4f7ea4;
     display: flex;
@@ -48,11 +52,12 @@ button{
     margin-left: 20px;
 }
 .content{ 
-    width: 100%;
+    width: 1440px;
     height: 910px;
     background-color: #c8f1ff;
 }
 .content .column{
+    width: 1440px;
     height: 400px;
     display: flex;
     justify-content: center;
@@ -62,6 +67,8 @@ button{
     width: 880px;
     height: 374px;
     float: left;
+    position: absolute;
+    left: 136px;
 }
 .content .column .left_column .left_logo{
     z-index: 5;
@@ -74,6 +81,8 @@ button{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    position: absolute;
+    left: 1015px;
 }
 .content .column .right_column .news{
     width: 292px;
@@ -129,6 +138,9 @@ button{
     height: 170px;
     background-image: url(images/index/u5.jpg);
     background-size: 100% 100%;
+    position: relative;
+    top: -4px;
+    border-radius: 7px;
 }
 .content .column .right_column .knowledge .banner{
     display: inline-flex;
@@ -269,7 +281,7 @@ button{
 }
 
 #introduction_box{
-	width: 1168px;
+	width: 1166px;
     height: 393px;
     overflow-y: hidden;
     background-image: none;
@@ -285,7 +297,7 @@ button{
 	width: 1168px;
     height: 392px;
     overflow-y: hidden;
-	background: url(images/index/sys_background.jpg) no-repeat;
+    background: url(images/index/sys_background.jpg) no-repeat;
     background-size: 1168px 392px;
 }
 
@@ -293,7 +305,7 @@ button{
 	width: 100%;
     height: 392px;
     overflow-y: hidden;
-	background: url(images/index/members_background.jpg) no-repeat;
+    background: url(images/index/members_background.jpg) no-repeat;
     background-size: 1168px 392px;
     padding: 0px;
     overflow: scroll;
