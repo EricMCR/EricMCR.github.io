@@ -5,7 +5,7 @@ window.onload = function () {
     if (avatar_url != "" && avatar_url != null){
         $("#avatar").attr("src",avatar_url);
     }else{
-        $("#avatar").attr("src","");
+        $("#avatar").attr("src","sdad.jpg");
     }
 
     //获取全部元素
