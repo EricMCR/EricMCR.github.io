@@ -58,7 +58,7 @@ window.onload=function(){
 
   $("#sign_out").click(function(){
     setCookie("username",getCookie("username"),-1);
-    setCookie("avatar_url",getCookie("username"),-1);
+    setCookie("avatar",getCookie("username"),-1);
     location.reload();
   })
 
