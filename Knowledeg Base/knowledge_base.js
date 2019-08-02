@@ -2,6 +2,7 @@ window.onload = function () {
 
     //加载头像
     var avatar_url = getCookie("avatar");
+    console.log(avatar_url);
     if (avatar_url != "" && avatar_url != null){
         $("#avatar").attr("src",avatar_url);
     }else{
