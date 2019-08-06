@@ -87,6 +87,15 @@ window.onload=function(){
   $("#register").click(function(){
     window.open("https://github.com/join");
   })
+
+  //加载介绍信息
+  var index_data = getJson("https://api.github.com/repos/EricMCR/EricMCR.github.io/contents/Data/index_data.json");
+
+  $("#sys_info_content").text(index_data.lab_introduction);
+
+  for(let i = 0;i < index_data.members_introduction.length;i++){
+    $("#members_intro").append("<div class='members_box'><img src='images/index/"+index_data.members_introduction[i].img_src+"' class='members_img'><span class='members_info'>"+index_data.members_introduction[i].name+"<ul>"+index_data.members_introduction[i].introduction+"</span></div>");
+  }
 }
 
 //动态改变登录提示框中的省略号个数
@@ -179,7 +188,7 @@ function getCookie(cname) {
   return "";
 }
 
-//获取json
+//获取GitHub文件中的json对象
 function getJson(url){
   var json;
   $.ajax({
