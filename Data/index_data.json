@@ -4,17 +4,17 @@
 	[
 		{
 			"name":"张三",
-			"img_src":"",
+			"img_src":"u90.png",
 			"introduction":"张三的个人简介"
 		},
 		{
 			"name":"李四",
-			"img_src":"",
+			"img_src":"u90.png",
 			"introduction":"李四的个人简介"
 		},
 		{
 			"name":"马超",
-			"img_src":"",
+			"img_src":"u90.png",
 			"introduction":"马超的个人简介"
 		}
 	]
