@@ -131,20 +131,29 @@
 }
 .content{
     width: 1440px;
-    height: 835px;
+    
     background-color: #c8f1ff;
 }
 .content #Dom{
     width:999px;
-    height: 590px;
+    
     margin: 0 auto;
+}
+.content #Dom .page-control{
+    text-align: center;
+    margin: 0px auto;
+    display: flex;
+    font-size: 25px;
+    border: 1px solid;
+    width: 230px;
+    height: 40px;
 }
 .content #Dom .k-dom{
     width:1002px;
-    height: 590px;
     background-color: #ecedef;
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 .content #Dom .k-dom .k-part{
     width: 954px;
@@ -155,6 +164,7 @@
     flex-direction: column;
     flex-wrap: nowrap;
     box-shadow:5px 5px 5px #797979;
+    cursor: pointer;
 }
 .content #Dom .k-dom .k-part .basic-information{
     display: inline-flex;
@@ -176,7 +186,9 @@
     margin-left: 30px;
 }
 .content #Dom .k-dom .k-part .basic-information .time{
-    margin-left: 580px;
+    //margin-left: 580px;
+    position: absolute;
+    left: 1000px;
 }
 .content #Dom .k-dom .k-part .concrete-information{
    width: 840px;
@@ -195,6 +207,9 @@
    font-size: 14px;
    margin-left: 58px;
    margin-top: 5px;
+}
+.content #Dom .p-dom{
+    display:none;
 }
 .content #Dom .p-dom .option{
     width: 1000px;
@@ -224,7 +239,7 @@
     width: 954px;
     height: 170px;
     background-color: #fff;
-    margin: 30px auto;
+    margin: 30px auto 10px auto;
     box-shadow:5px 5px 5px #797979;
     border: 1px solid #000;
 }
