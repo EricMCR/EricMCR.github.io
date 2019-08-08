@@ -141,12 +141,46 @@
 }
 .content #Dom .page-control{
     text-align: center;
-    margin: 0px auto;
+    margin:auto auto 3px auto;
     display: flex;
     font-size: 25px;
-    border: 1px solid;
-    width: 230px;
+    width: 250px;
     height: 40px;
+}
+.content #Dom .page-control p{
+    height: 30px;
+}
+.content #Dom .page-control .page-up{
+    width: 30px;
+    height: 30px;
+    margin: auto 3px auto auto;
+    background-color: #4f7ea4;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+.content #Dom .page-control .page-down{
+    width: 30px;
+    height: 30px;
+    margin: auto auto auto 3px;
+    background-color: #4f7ea4;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+.content #Dom .page-control .page-box{
+    display: flex;
+    margin: auto 0px auto 0px;
+}
+.content #Dom .page-control .page-box .page-number{
+    width: 30px;
+    height: 30px;
+    margin: auto 2px auto 2px;
+    font-size: 20px;
+    background-color: #4f7ea4;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+.content #Dom .page-control .page-box .light{
+    background-color: #33CCFF;
 }
 .content #Dom .k-dom{
     width:1002px;

@@ -50,7 +50,7 @@ window.onload = function () {
     for (let i = 0;i < knowledgeBase.length; i++){
         $("#k-area").append("<li class='k-part' id='k-part"+i+"'></li>");
         if (i > 4){
-            $("#k-part"+i).css("display","none");
+          $("#k-part"+i).css("display","none");
         }
         $("#k-part"+i).append("<div class='basic-information'><img src='../images/知识库/u168.png'><div class='name'><p>"+knowledgeBase[i].author+"</p></div><div class='topic'><p>"+knowledgeBase[i].title+"</p></div><div class='time'><p>发布时间:"+knowledgeBase[i].release_time+"</p></div></div>");
         $("#k-part"+i).append("<div class='concrete-information'><p>"+knowledgeBase[i].content+"</p></div>");
@@ -58,6 +58,37 @@ window.onload = function () {
         $("#k-part"+i).click(function(){
 
         })
+    }
+
+    //知识库分页
+    var kParts = $(".k-part");
+    addPageNumber(kParts.length,".k-dom .page-box");
+    var kPagesNumber = $(".k-dom .page-number");
+    var currentPage = 1;
+    $(kPagesNumber[currentPage-1]).attr("class","page-number light");
+    $(".k-dom .page-up").click(function(){
+      if (currentPage > 1){
+        currentPage--;
+        showParts(currentPage,kParts);
+        showPageNumber(currentPage,kPagesNumber);
+        $('body,html').animate({scrollTop:0,},0)
+      }
+    })
+    $(".k-dom .page-down").click(function(){
+      if (currentPage < kPagesNumber.length){
+        currentPage++;
+        showParts(currentPage,kParts);
+        showPageNumber(currentPage,kPagesNumber);
+        $('body,html').animate({scrollTop:0,},0)
+      }
+    })
+    for (let i = 0; i < kPagesNumber.length; i++){
+      $(kPagesNumber[i]).click(function(){
+        currentPage = i+1;
+        showParts(i+1,kParts);
+        showPageNumber(i+1,kPagesNumber);
+        $('body,html').animate({scrollTop:0,},0)
+      })
     }
 };
 
@@ -96,4 +127,30 @@ function getJson(url){
     }
   })
   return json;
+}
+
+//计算所需页总数并加载到页面内
+function addPageNumber(partsTotal,pageLocation){
+  var total = Math.ceil(partsTotal/5);
+  for (let i = 0;i < total;i++){
+    $(pageLocation).append("<div class='page-number'><p>"+(i+1)+"</p></div>");
+  }
+}
+
+//更改当前显示的内容
+function showParts(pageNumber,parts){
+  var index = 5*(pageNumber-1);
+  parts.css("display","none");
+  var i = 0;
+  while (i < 5 && index < parts.length){
+    $(parts[index]).css("display","block");
+    index++;
+    i++;
+  }
+}
+
+//更改当前页标样式
+function showPageNumber(pageNumber,pages){
+  pages.attr("class","page-number");
+  $(pages[pageNumber-1]).attr("class","page-number light");
 }
