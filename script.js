@@ -137,8 +137,8 @@ function checkPassword(userName,password){
           success: function (data) {
             var json = JSON.stringify(data);
             var obj = eval ("(" + json + ")");
-            setCookie("username",userName,3);
-            setCookie("avatar",obj.avatar_url);
+            setCookie("username",userName,7);
+            setCookie("avatar",obj.avatar_url,7);
             setCookie("oldname",userName,30);
             if ($("#rememberpw").prop("checked")){
               setCookie("oldpw",password,7);
