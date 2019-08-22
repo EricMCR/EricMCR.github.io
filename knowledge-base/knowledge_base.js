@@ -9,6 +9,42 @@ window.onload = function () {
         $("#avatar").attr("src","sdad.jpg");
     }
 
+    //知识库分页
+    var kParts = $(".k-part");
+    if (kParts.length > 5){
+      for(let i = 5;i < kParts.length;i++){
+        $(kParts[i]).css("display","none");
+      }
+    }
+    addPageNumber(kParts.length,".k-dom .page-box");
+    var kPagesNumber = $(".k-dom .page-number");
+    var currentPage = 1;
+    $(kPagesNumber[currentPage-1]).attr("class","page-number light");
+    $(".k-dom .page-up").click(function(){
+      if (currentPage > 1){
+        currentPage--;
+        showParts(currentPage,kParts);
+        showPageNumber(currentPage,kPagesNumber);
+        $('body,html').animate({scrollTop:0,},0)
+      }
+    })
+    $(".k-dom .page-down").click(function(){
+      if (currentPage < kPagesNumber.length){
+        currentPage++;
+        showParts(currentPage,kParts);
+        showPageNumber(currentPage,kPagesNumber);
+        $('body,html').animate({scrollTop:0,},0)
+      }
+    })
+    for (let i = 0; i < kPagesNumber.length; i++){
+      $(kPagesNumber[i]).click(function(){
+        currentPage = i+1;
+        showParts(i+1,kParts);
+        showPageNumber(i+1,kPagesNumber);
+        $('body,html').animate({scrollTop:0,},0)
+      })
+    }
+
     //获取全部元素
     var allLis = $$('nav').getElementsByTagName('li');
     var knowledgeDom = $$('Dom').getElementsByClassName('k-dom');
@@ -60,41 +96,7 @@ window.onload = function () {
     //     })
     // }
 
-    //知识库分页
-    var kParts = $(".k-part");
-    if (kParts.length > 5){
-      for(let i = 5;i < kParts.length;i++){
-        $(kParts[i]).css("display","none");
-      }
-    }
-    addPageNumber(kParts.length,".k-dom .page-box");
-    var kPagesNumber = $(".k-dom .page-number");
-    var currentPage = 1;
-    $(kPagesNumber[currentPage-1]).attr("class","page-number light");
-    $(".k-dom .page-up").click(function(){
-      if (currentPage > 1){
-        currentPage--;
-        showParts(currentPage,kParts);
-        showPageNumber(currentPage,kPagesNumber);
-        $('body,html').animate({scrollTop:0,},0)
-      }
-    })
-    $(".k-dom .page-down").click(function(){
-      if (currentPage < kPagesNumber.length){
-        currentPage++;
-        showParts(currentPage,kParts);
-        showPageNumber(currentPage,kPagesNumber);
-        $('body,html').animate({scrollTop:0,},0)
-      }
-    })
-    for (let i = 0; i < kPagesNumber.length; i++){
-      $(kPagesNumber[i]).click(function(){
-        currentPage = i+1;
-        showParts(i+1,kParts);
-        showPageNumber(i+1,kPagesNumber);
-        $('body,html').animate({scrollTop:0,},0)
-      })
-    }
+    
 };
 
 //获取cookie信息
