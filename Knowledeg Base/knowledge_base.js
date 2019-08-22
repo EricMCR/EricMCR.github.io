@@ -46,19 +46,19 @@ window.onload = function () {
     }
 
     //加载知识库内容
-    var knowledgeBase = getJson("https://api.github.com/repos/EricMCR/EricMCR.github.io/contents/Data/knowledge_base.json");
-    for (let i = 0;i < knowledgeBase.length; i++){
-        $("#k-area").append("<li class='k-part' id='k-part"+i+"'></li>");
-        if (i > 4){
-          $("#k-part"+i).css("display","none");
-        }
-        $("#k-part"+i).append("<div class='basic-information'><img src='../images/知识库/u168.png'><div class='name'><p>"+knowledgeBase[i].author+"</p></div><div class='topic'><p>"+knowledgeBase[i].title+"</p></div><div class='time'><p>发布时间:"+knowledgeBase[i].release_time+"</p></div></div>");
-        $("#k-part"+i).append("<div class='concrete-information'><p>"+knowledgeBase[i].content+"</p></div>");
-        $("#k-part"+i).append("<div class='download-information'><p>下载链接</p></div>");
-        $("#k-part"+i).click(function(){
+    // var knowledgeBase = getJson("https://api.github.com/repos/EricMCR/EricMCR.github.io/contents/Data/knowledge_base.json");
+    // for (let i = 0;i < knowledgeBase.length; i++){
+    //     $("#k-area").append("<li class='k-part' id='k-part"+i+"'></li>");
+    //     if (i > 4){
+    //       $("#k-part"+i).css("display","none");
+    //     }
+    //     $("#k-part"+i).append("<div class='basic-information'><img src='../images/知识库/u168.png'><div class='name'><p>"+knowledgeBase[i].author+"</p></div><div class='topic'><p>"+knowledgeBase[i].title+"</p></div><div class='time'><p>发布时间:"+knowledgeBase[i].release_time+"</p></div></div>");
+    //     $("#k-part"+i).append("<div class='concrete-information'><p>"+knowledgeBase[i].content+"</p></div>");
+    //     $("#k-part"+i).append("<div class='download-information'><p>下载链接</p></div>");
+    //     $("#k-part"+i).click(function(){
 
-        })
-    }
+    //     })
+    // }
 
     //知识库分页
     var kParts = $(".k-part");
