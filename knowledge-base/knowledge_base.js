@@ -62,6 +62,11 @@ window.onload = function () {
 
     //知识库分页
     var kParts = $(".k-part");
+    if (kParts.length > 5){
+      for(let i = 5;i < kParts.length;i++){
+        $(kParts[i]).css("display","none");
+      }
+    }
     addPageNumber(kParts.length,".k-dom .page-box");
     var kPagesNumber = $(".k-dom .page-number");
     var currentPage = 1;
