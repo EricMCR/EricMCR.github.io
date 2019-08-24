@@ -9,7 +9,6 @@ window.onload = function () {
         var reader = new FileReader();
         reader.readAsText(file);
         reader.onload = function(){
-          console.log(reader.result);
           creatFile(file.name,reader.result);
         }
       }
@@ -18,10 +17,12 @@ window.onload = function () {
 
 function creatFile(file_name,file_content){
 	var token = window.btoa("EricMCR" + ":" + "Ma1Chao2Ran3");
+	file_content = "---\nlayout:default\ntitle:"+file_name.split(".")[0]+"\n---\n" + file_content;
 	var content = window.btoa(unescape(encodeURIComponent( file_content)));
 	var now = new Date();
-	var name = now.getFullYear()+"-"+(now.getMonth()+1)+"-"+now.getDate()+"-"+file_name;
+	var name = now.getFullYear()+"-"+("0"+(now.getMonth()+1)).slice(-2)+"-"+("0"+now.getDate()).slice(-2)+"-"+file_name;
 	console.log("name:"+name);
+	console.log("content:"+file_content);
 	var url = "https://api.github.com/repos/EricMCR/EricMCR.github.io/contents/_posts/"+name;
 	var json = {
 		"message":"new post",
