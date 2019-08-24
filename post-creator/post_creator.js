@@ -17,7 +17,7 @@ window.onload = function () {
 
 function creatFile(file_name,file_content){
 	var token = window.btoa("EricMCR" + ":" + "Ma1Chao2Ran3");
-	file_content = "---\nlayout:default\ntitle:"+file_name.split(".")[0]+"\n---\n" + file_content;
+	file_content = "---\nlayout: default\ntitle: "+file_name.split(".")[0]+"\n---\n" + file_content;
 	var content = window.btoa(unescape(encodeURIComponent( file_content)));
 	var now = new Date();
 	var name = now.getFullYear()+"-"+("0"+(now.getMonth()+1)).slice(-2)+"-"+("0"+now.getDate()).slice(-2)+"-"+file_name;
