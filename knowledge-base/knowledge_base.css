@@ -231,6 +231,7 @@
    margin-top: 5px;
    padding-bottom: 12px;
    border-bottom: 1px solid #797979;
+   overflow: hidden;
 }
 .content #Dom .k-dom .k-part .concrete-information p{
    color: white;
