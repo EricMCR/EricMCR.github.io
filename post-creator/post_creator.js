@@ -1,5 +1,5 @@
 window.onload = function () {
-    $("#submit").click(function(){
+    $("#submit1").click(function(){
       var files = document.getElementById('file_selector').files;
       if (files.length > 0){
         var file = files[0];
@@ -12,6 +12,13 @@ window.onload = function () {
           creatFile(file.name,reader.result);
         }
       }
+    })
+
+    $("#submit2").click(function(){
+    	var title = $("#title").val();
+    	var content = $("#content").val();
+    	console.log(title);
+    	creatFile(title+".md",content);
     })
 };
 
