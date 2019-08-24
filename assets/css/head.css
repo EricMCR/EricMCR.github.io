@@ -2,6 +2,9 @@
     padding: 0;
     list-style: none;
 }
+body{
+    margin: 0px;
+}
 #logo1{
     margin-left: 120px;
 }
