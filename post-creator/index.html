@@ -2,14 +2,25 @@
 ---
 <!DOCTYPE html>
 <html lang="en">
-{% include head.html %}
-<script type="text/javascript" src="post_creator.js"></script>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>发布文章</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <link href="../assets/css/head.css" type="text/css" rel="stylesheet"/>
+    <link href="post_creator.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src="post_creator.js"></script>
+</head>
+
 <body>
 	{% include header.html %}
 	<div class="content">
 		<input type='file' id="file_selector"/>
 		<br>
 		<input type="button" value="上传" id="submit">
+		<input type="text" id="title" placeholder="（请输入文章标题）">
+    <textarea type="text" id="content" placeholder="（请输入文章内容）"></textarea>
 	</div>
 </body>
 </html>

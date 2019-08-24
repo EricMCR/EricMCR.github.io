@@ -1,0 +1,14 @@
+.content{
+    display: grid;
+}
+#title{
+    width: 200px;
+    height: 30px;
+    font-size: 15px;
+}
+#content{
+    height: 302px;
+    font-size: 20px;
+    padding: 5px;
+    resize: none;
+}
