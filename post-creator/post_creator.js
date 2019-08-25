@@ -14,7 +14,7 @@ window.onload = function () {
 					$("#wait_box").css("display","block");
 				}
 				reader.onload = function(){
-					creatFile(file.name,reader.result);
+					creatFile(file.name,reader.result,username);
 				}
 			}
 		}
@@ -27,16 +27,16 @@ window.onload = function () {
 			var title = $("#title").val();
 			var content = $("#content").val();
 			console.log(title);
-			creatFile(title+".md",content);
+			creatFile(title+".md",content,username);
 		}
 	})
 
 	changeDot();
 };
 
-function creatFile(file_name,file_content){
+function creatFile(file_name,file_content,author){
 	var token = window.btoa("EricMCR" + ":" + "Ma1Chao2Ran3");
-	file_content = "---\nlayout: default\ntitle: "+file_name.split(".")[0]+"\nauthor: "+username+"\n---\n" + file_content;
+	file_content = "---\nlayout: default\ntitle: "+file_name.split(".")[0]+"\nauthor: "+author+"\n---\n" + file_content;
 	var content = window.btoa(unescape(encodeURIComponent( file_content)));
 	var now = new Date();
 	var name = now.getFullYear()+"-"+("0"+(now.getMonth()+1)).slice(-2)+"-"+("0"+now.getDate()).slice(-2)+"-"+file_name;
