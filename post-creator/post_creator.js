@@ -39,7 +39,7 @@ function creatFile(file_name,file_content,author){
 	var now = new Date();
 	var time = now.getFullYear()+"-"+("0"+(now.getMonth()+1)).slice(-2)+"-"+("0"+now.getDate()).slice(-2)+" "+("0"+(now.getHours()+1)).slice(-2)+":"+("0"+(now.getMinutes()+1)).slice(-2)+":"+("0"+(now.getSeconds()+1)).slice(-2);
 	var name = now.getFullYear()+"-"+("0"+(now.getMonth()+1)).slice(-2)+"-"+("0"+now.getDate()).slice(-2)+"-"+file_name;
-	file_content = "---\nlayout: default\ntitle: "+file_name.split(".")[0]+"\nauthor: "+author+"\ndate: "+time+"\n---\n" + file_content;
+	file_content = "---\nlayout: default\ntitle: "+splitFileName(file_name)+"\nauthor: "+author+"\ndate: "+time+"\n---\n" + file_content;
 	var content = window.btoa(unescape(encodeURIComponent( file_content)));
 	console.log("name:"+name);
 	console.log("content:"+file_content);
@@ -93,4 +93,14 @@ function changeDot(){
 	}
 	$("#dot").text(s);
 	setTimeout("changeDot()",500);
+}
+
+//截取文件名
+function splitFileName(text) {
+	var pattern = /\.{1}[a-z]{1,}$/;
+	if (pattern.exec(text) !== null) {
+		return (text.slice(0, pattern.exec(text).index));
+	} else {
+		return text;
+	}
 }
