@@ -61,6 +61,7 @@ a{
     border: 1px solid;
     border-radius: 5px;
     padding: 2px 5px;
+    cursor: pointer;
 }
 #creat a{
     color: #000000;

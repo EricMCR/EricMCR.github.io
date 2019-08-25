@@ -45,6 +45,14 @@ window.onload = function () {
       })
     }
 
+    $("#creat").click(function(){
+      if (avatar_url=="" || avatar_url==null){
+        alert("请先登录！");
+      }else{
+        window.location.href = "../post-creator/";
+      }
+    })
+
     //获取全部元素
     var allLis = $$('nav').getElementsByTagName('li');
     var knowledgeDom = $$('Dom').getElementsByClassName('k-dom');
