@@ -8,8 +8,11 @@ window.onload = function () {
         console.log(file.lastModifiedDate);
         var reader = new FileReader();
         reader.readAsText(file);
+        reader.onloadstart = function(){
+            $("#wait_box").css("display","block");
+        }
         reader.onload = function(){
-          creatFile(file.name,reader.result);
+        	creatFile(file.name,reader.result);
         }
       }
     })
@@ -20,6 +23,8 @@ window.onload = function () {
     	console.log(title);
     	creatFile(title+".md",content);
     })
+
+    changeDot();
 };
 
 function creatFile(file_name,file_content){
@@ -43,10 +48,24 @@ function creatFile(file_name,file_content){
 		},
 		data: JSON.stringify(json),
 		success:function(data){
-			alert("创建成功！");
+			$("#wait_box p").html("创建成功！3秒后自动<a href='../knowledge-base/'>跳转</a>至知识库...");
+			setTimeout(function(){window.location.href="../knowledge-base/"},3000);
 		},
 		error:function(err){
-			alert("创建失败！");
+			$("#wait_box p").html("创建失败！"+err);
+			setTimeout(function(){location.reload()},3000);
 		}
 	})
+}
+
+//动态改变登录提示框中的省略号个数
+function changeDot(){
+  var s = $("#dot").text();
+  if (s != "..."){
+    s = s+".";
+  }else{
+    s = "";
+  }
+  $("#dot").text(s);
+  setTimeout("changeDot()",500);
 }
