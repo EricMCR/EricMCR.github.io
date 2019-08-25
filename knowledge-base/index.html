@@ -48,7 +48,7 @@
                 <li class="k-part" onclick="window.open('{{ post.url }}')">
                     <div class="basic-information">
                         <img src="../images/知识库/u168.png">
-                        <div class="name"><p>姓名</p></div>
+                        <div class="name"><p>{{ post.author }}</p></div>
                         <div class="topic"><p>{{ post.title }}</p></div>
                         <div class="time"><p>发布时间:{{ post.date | date_to_string }} </p></div>
                     </div>
