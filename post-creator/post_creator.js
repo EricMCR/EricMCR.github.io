@@ -37,7 +37,7 @@ window.onload = function () {
 function creatFile(file_name,file_content,author){
 	var token = window.btoa("EricMCR" + ":" + "Ma1Chao2Ran3");
 	var now = new Date();
-	var time = now.getFullYear()+"-"+("0"+(now.getMonth()+1)).slice(-2)+"-"+("0"+now.getDate()).slice(-2)+" "+("0"+(now.getHours())).slice(-2)+":"+("0"+(now.getMinutes()+1)).slice(-2)+":"+("0"+(now.getSeconds()+1)).slice(-2);
+	var time = now.getFullYear()+"-"+("0"+(now.getMonth()+1)).slice(-2)+"-"+("0"+now.getDate()).slice(-2)+" "+("0"+(now.getHours())).slice(-2)+":"+("0"+(now.getMinutes())).slice(-2)+":"+("0"+(now.getSeconds())).slice(-2);
 	var name = now.getFullYear()+"-"+("0"+(now.getMonth()+1)).slice(-2)+"-"+("0"+now.getDate()).slice(-2)+"-"+file_name;
 	file_content = "---\nlayout: default\ntitle: "+splitFileName(file_name)+"\nauthor: "+author+"\ndate: "+time+"\n---\n" + file_content;
 	var content = window.btoa(unescape(encodeURIComponent( file_content)));
