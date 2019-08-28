@@ -44,7 +44,9 @@
     <div id="Dom">
         <div class="k-dom">
             <ul id="k-area">
-                {% for post in site.posts post.tags:"HTML" %}
+                {% assign tags = ["HTML"] %}
+                {% for post in site.posts %}
+                {% if post.tags contains tags %}
                 <li class="k-part" onclick="window.open('{{ post.url }}')">
                     <div class="basic-information">
                         <img src="../images/知识库/u168.png">
@@ -59,6 +61,7 @@
                         
                     </div>
                 </li>
+                {% endif %}
                 {% endfor %}
             </ul>
             <div class="page-control">
