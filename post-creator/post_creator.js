@@ -34,6 +34,7 @@ window.onload = function () {
 	changeDot();
 };
 
+//在GitHub库中创建文件
 function creatFile(file_name,file_content,author){
 	var token = window.btoa("EricMCR" + ":" + "Ma1Chao2Ran3");
 	var now = new Date();

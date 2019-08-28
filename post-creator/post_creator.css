@@ -12,6 +12,13 @@ textarea{
 .content{
     display: grid;
 }
+.checkBox{
+	display: flex;
+}
+.options{
+	display: flex;
+    margin: auto 0px;
+}
 #title{
     width: 200px;
     height: 30px;
