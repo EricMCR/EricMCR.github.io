@@ -44,7 +44,7 @@
     <div id="Dom">
         <div class="k-dom">
             <ul id="k-area">
-                {% for post in site.posts %}
+                {% for post in site.posts post.tags:"HTML" %}
                 <li class="k-part" onclick="window.open('{{ post.url }}')">
                     <div class="basic-information">
                         <img src="../images/知识库/u168.png">
