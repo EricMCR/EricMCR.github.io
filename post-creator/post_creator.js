@@ -61,6 +61,7 @@ window.onload = function () {
 			}else if (IsNullOrWhitespace(content)){
 				alert("请输入内容！");
 			}else{
+				$("#wait_box").css("display","block");
 				creatFile(title+".md",content,username,tags);
 			}
 		}
