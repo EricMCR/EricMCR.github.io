@@ -7,6 +7,20 @@ window.onload = function () {
 		}else{
 			var files = document.getElementById('file_selector').files;
 			if (files.length > 0){
+				var options = $(".tagName:checked");
+				var tags = new Array();
+				for (let i = 0; i < options.length; i++){
+					if (options[i].value != "其他"){
+						tags.push(options[i].value);
+					}else{
+						if (IsNullOrWhitespace($("#selfDefinedTag").val())){
+							alert("请输入自定义标签名称！")
+							return false;
+						}else{
+							tags.push($("#selfDefinedTag").val());
+						}
+					}
+				}
 				var file = files[0];
 				var reader = new FileReader();
 				reader.readAsText(file);
@@ -14,8 +28,10 @@ window.onload = function () {
 					$("#wait_box").css("display","block");
 				}
 				reader.onload = function(){
-					creatFile(file.name,reader.result,username);
+					creatFile(file.name,reader.result,username,tags);
 				}
+			}else{
+				alert("请选择文件！");
 			}
 		}
 	})
@@ -26,8 +42,27 @@ window.onload = function () {
 		}else{
 			var title = $("#title").val();
 			var content = $("#content").val();
-			console.log(title);
-			creatFile(title+".md",content,username);
+			var options = $(".tagName:checked");
+			var tags = new Array();
+			for (let i = 0; i < options.length; i++){
+				if (options[i].value != "其他"){
+					tags.push(options[i].value);
+				}else{
+					if (IsNullOrWhitespace($("#selfDefinedTag").val())){
+						alert("请输入自定义标签名称！")
+						return false;
+					}else{
+						tags.push($("#selfDefinedTag").val());
+					}
+				}
+			}
+			if (IsNullOrWhitespace(title)){
+				alert("请输入标题！");
+			}else if (IsNullOrWhitespace(content)){
+				alert("请输入内容！");
+			}else{
+				creatFile(title+".md",content,username,tags);
+			}
 		}
 	})
 
@@ -35,15 +70,21 @@ window.onload = function () {
 };
 
 //在GitHub库中创建文件
-function creatFile(file_name,file_content,author){
-	var token = window.btoa("EricMCR" + ":" + "Ma1Chao2Ran3");
+function creatFile(file_name,file_content,author,tags){
+	var token = "RXJpY01DUjpNYTFDaGFvMlJhbjM=";
 	var now = new Date();
 	var time = now.getFullYear()+"-"+("0"+(now.getMonth()+1)).slice(-2)+"-"+("0"+now.getDate()).slice(-2)+" "+("0"+(now.getHours())).slice(-2)+":"+("0"+(now.getMinutes())).slice(-2)+":"+("0"+(now.getSeconds())).slice(-2);
 	var name = now.getFullYear()+"-"+("0"+(now.getMonth()+1)).slice(-2)+"-"+("0"+now.getDate()).slice(-2)+"-"+file_name;
-	file_content = "---\nlayout: default\ntitle: "+splitFileName(file_name)+"\nauthor: "+author+"\ndate: "+time+"\n---\n" + file_content;
+
+	var tagsToString = "\ntags:";
+	for (let i = 0; i<tags.length;i++){
+		tagsToString += "\n- " + tags[i];
+	}
+
+	file_content = "---\nlayout: default\ntitle: "+splitFileName(file_name)+"\nauthor: "+author+"\ndate: "+time+tagsToString+"\n---\n" + file_content;
 	var content = window.btoa(unescape(encodeURIComponent( file_content)));
 	console.log("name:"+name);
-	console.log("content:"+file_content);
+	console.log("content:\n"+file_content);
 	var url = "https://api.github.com/repos/EricMCR/EricMCR.github.io/contents/_posts/"+name;
 	var json = {
 		"message":"new post by "+author,
@@ -104,4 +145,10 @@ function splitFileName(text) {
 	} else {
 		return text;
 	}
+}
+
+//判断字符串为空或全为空格
+function IsNullOrWhitespace(input) {
+    if (typeof input === 'undefined' || input == null) return true;
+    return !/\S/.test(input);
 }
