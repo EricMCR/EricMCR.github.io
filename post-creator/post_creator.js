@@ -1,4 +1,7 @@
 window.onload = function () {
+	var he = HE.getEditor('content');
+	//he.getHtml();
+
 	var username = getCookie("username");
 	var isLogined = (username != "" && username != null);
 	$("#submit1").click(function(){
@@ -40,10 +43,12 @@ window.onload = function () {
 		if (!isLogined){
 			alert("请先登录！");
 		}else{
+			he.sync();
 			var title = $("#title").val();
 			var content = $("#content").val();
 			var options = $(".tagName:checked");
 			var tags = new Array();
+
 			for (let i = 0; i < options.length; i++){
 				if (options[i].value != "其他"){
 					tags.push(options[i].value);
