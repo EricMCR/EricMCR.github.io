@@ -1,6 +1,16 @@
 window.onload = function () {
-	var he = HE.getEditor('content');
-	//he.getHtml();
+	var he = HE.getEditor('content',{
+		autoHeight : true,
+		autoFloat : true,
+		uploadPhoto : true,
+		uploadPhotoHandler : 'php/uploadPhoto.php',
+		uploadPhotoSize : 0,
+		uploadPhotoType : 'gif,png,jpg,jpeg',
+		uploadPhotoSizeError : '不能上传大于××KB的图片',
+		uploadPhotoTypeError : '只能上传gif,png,jpg,jpeg格式的图片',
+		lang : 'zh-jian',
+	});
+	he.getText();
 
 	var username = getCookie("username");
 	var isLogined = (username != "" && username != null);
