@@ -1,7 +1,7 @@
 window.onload = function () {
 	var he = HE.getEditor('content',{
 		autoHeight : true,
-		autoFloat : true,
+		autoFloat : false,
 		uploadPhoto : true,
 		uploadPhotoHandler : 'php/uploadPhoto.php',
 		uploadPhotoSize : 0,
