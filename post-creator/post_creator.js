@@ -41,7 +41,7 @@ window.onload = function () {
 					$("#wait_box").css("display","block");
 				}
 				reader.onload = function(){
-					creatFile(file.name,reader.result,username,tags);
+					creatFile(splitFileName(file.name),reader.result,username,tags);
 				}
 			}else{
 				alert("请选择文件！");
@@ -77,7 +77,7 @@ window.onload = function () {
 				alert("请输入内容！");
 			}else{
 				$("#wait_box").css("display","block");
-				creatFile(title+".md",content,username,tags);
+				creatFile(title,content,username,tags);
 			}
 		}
 	})
@@ -90,14 +90,14 @@ function creatFile(file_name,file_content,author,tags){
 	var token = "RXJpY01DUjpNYTFDaGFvMlJhbjM=";
 	var now = new Date();
 	var time = now.getFullYear()+"-"+("0"+(now.getMonth()+1)).slice(-2)+"-"+("0"+now.getDate()).slice(-2)+" "+("0"+(now.getHours())).slice(-2)+":"+("0"+(now.getMinutes())).slice(-2)+":"+("0"+(now.getSeconds())).slice(-2);
-	var name = now.getFullYear()+"-"+("0"+(now.getMonth()+1)).slice(-2)+"-"+("0"+now.getDate()).slice(-2)+"-"+file_name;
+	var name = now.getFullYear()+"-"+("0"+(now.getMonth()+1)).slice(-2)+"-"+("0"+now.getDate()).slice(-2)+"-"+file_name+"-"+author+".md";
 
 	var tagsToString = "\ntags:";
 	for (let i = 0; i<tags.length;i++){
 		tagsToString += "\n- " + tags[i];
 	}
 
-	file_content = "---\nlayout: default\ntitle: "+splitFileName(file_name)+"\nauthor: "+author+"\ndate: "+time+tagsToString+"\n---\n" + file_content;
+	file_content = "---\nlayout: default\ntitle: "+file_name+"\nauthor: "+author+"\ndate: "+time+tagsToString+"\n---\n" + file_content;
 	var content = window.btoa(unescape(encodeURIComponent( file_content)));
 	console.log("name:"+name);
 	console.log("content:\n"+file_content);
