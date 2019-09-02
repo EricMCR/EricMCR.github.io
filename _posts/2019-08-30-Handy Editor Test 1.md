@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Handy Editor Test 1
+title: Handy Editor Test
 author: EricMCR
 date: 2019-08-30 13:46:05
 tags:
