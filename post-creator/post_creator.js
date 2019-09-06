@@ -10,7 +10,6 @@ window.onload = function () {
 		uploadPhotoTypeError : '只能上传gif,png,jpg,jpeg格式的图片',
 		lang : 'zh-jian',
 	});
-	he.getText();
 
 	var username = getCookie("username");
 	var isLogined = (username != "" && username != null);
