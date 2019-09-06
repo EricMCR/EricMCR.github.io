@@ -14,40 +14,40 @@ window.onload = function () {
 
 	var username = getCookie("username");
 	var isLogined = (username != "" && username != null);
-	$("#submit1").click(function(){
-		if (!isLogined){
-			alert("请先登录！");
-		}else{
-			var files = document.getElementById('file_selector').files;
-			if (files.length > 0){
-				var options = $(".tagName:checked");
-				var tags = new Array();
-				for (let i = 0; i < options.length; i++){
-					if (options[i].value != "其他"){
-						tags.push(options[i].value);
-					}else{
-						if (IsNullOrWhitespace($("#selfDefinedTag").val())){
-							alert("请输入自定义标签名称！")
-							return false;
-						}else{
-							tags.push($("#selfDefinedTag").val());
-						}
-					}
-				}
-				var file = files[0];
-				var reader = new FileReader();
-				reader.readAsText(file);
-				reader.onloadstart = function(){
-					$("#wait_box").css("display","block");
-				}
-				reader.onload = function(){
-					creatFile(splitFileName(file.name),reader.result,username,tags);
-				}
-			}else{
-				alert("请选择文件！");
-			}
-		}
-	})
+	// $("#submit1").click(function(){
+	// 	if (!isLogined){
+	// 		alert("请先登录！");
+	// 	}else{
+	// 		var files = document.getElementById('file_selector').files;
+	// 		if (files.length > 0){
+	// 			var options = $(".tagName:checked");
+	// 			var tags = new Array();
+	// 			for (let i = 0; i < options.length; i++){
+	// 				if (options[i].value != "其他"){
+	// 					tags.push(options[i].value);
+	// 				}else{
+	// 					if (IsNullOrWhitespace($("#selfDefinedTag").val())){
+	// 						alert("请输入自定义标签名称！")
+	// 						return false;
+	// 					}else{
+	// 						tags.push($("#selfDefinedTag").val());
+	// 					}
+	// 				}
+	// 			}
+	// 			var file = files[0];
+	// 			var reader = new FileReader();
+	// 			reader.readAsText(file);
+	// 			reader.onloadstart = function(){
+	// 				$("#wait_box").css("display","block");
+	// 			}
+	// 			reader.onload = function(){
+	// 				creatFile(splitFileName(file.name),reader.result,username,tags);
+	// 			}
+	// 		}else{
+	// 			alert("请选择文件！");
+	// 		}
+	// 	}
+	// })
 
 	$("#submit2").click(function(){
 		if (!isLogined){
