@@ -219,6 +219,10 @@ a{
     align-items: center;
     margin: 25px 0 0 30px;
 }
+.content #Dom .k-dom .k-part .basic-information img{
+    width: 45px;
+    height: 45px;
+}
 .content #Dom .k-dom .k-part .basic-information p{
     color: #ffffff;
     font-weight: 900;
