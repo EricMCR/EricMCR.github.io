@@ -19,10 +19,33 @@
 	width: 200px;
 	height: 130px;
 	margin: 15px 30px;
-	background: #778899;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+}
+#categories-box #category-box1{
+	background: url(image/img1.jpg) no-repeat;
+	background-size: cover;
+}
+#categories-box #category-box2{
+	background: url(image/img2.jpg) no-repeat;
+	background-size: cover;
+}
+#categories-box #category-box3{
+	background: url(image/img3.jpg) no-repeat;
+	background-size: cover;
+}
+#categories-box #category-box4{
+	background: url(image/img4.jpg) no-repeat;
+	background-size: cover;
+}
+#categories-box #category-box5{
+	background: url(image/img5.jpg) no-repeat;
+	background-size: cover;
+}
+#categories-box #category-box6{
+	background: url(image/img6.jpg) no-repeat;
+	background-size: cover;
 }
 #categories-box .category-box hr{
 	margin-left: 20%;
@@ -86,7 +109,7 @@
     height: 100%;
     display: flex;
 	flex-wrap: wrap;
-	overflow-y: scroll;
+	overflow-y: auto;
 }
 #about-us #intro #members-intro .member-box{
 	width: 260px;
@@ -107,6 +130,7 @@
     margin-top: 2px;
     margin-left: 5px;
     float: left;
+    overflow: hidden;
 }
 #about-us #intro #members-intro .member-box .member-info .member-name{
 	height: 17px;
@@ -115,16 +139,18 @@
 	font-size: 15px;
 }
 #about-us #intro #members-intro .member-box .member-info .member-intro{
+	width: 210px;
 	height: 40px;
 	color: #A4A4A4;
 	font-size: 13px;
 	word-wrap: break-word;
 	word-break: keep-all;
-	overflow: scroll;
+	overflow-y: scroll;
 }
 #about-us #intro #lab-intro{
     width: 40%;
     height: 100%;
+    overflow: hidden;
 }
 #about-us #intro #lab-intro .title{
 	color: #FF4500;
@@ -138,8 +164,14 @@
 	background-color: #000000;
 }
 #about-us #intro #lab-intro .lab-info{
-    height: 150px;
+	width: 415px;
+    height: 110px;
+    margin-bottom: 5px;
     overflow-y: scroll;
+}
+#about-us #intro #lab-intro img{
+	width: 400px;
+	height: 100px;
 }
 #main-title{
 	width: 110px;
