@@ -2,6 +2,9 @@
 	margin: 0px;
 	padding: 0px;
 }
+body{
+	height: 700px;
+}
 #header{
     width: 100%;
     height: 40px;
