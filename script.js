@@ -1,9 +1,6 @@
 window.onload=function(){
 
-  // $(".header").css("width",$(document).width());
-  // $(".content").css("width",$(document).width());
-  // $(".column").css("width",$(document).width());
-
+  //加载用户信息
   var username = getCookie("username");
   if (username != "" && username != null){
     $("#login").css("display","none");
