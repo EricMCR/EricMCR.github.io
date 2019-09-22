@@ -10,7 +10,9 @@ textarea{
     width: 80px;
 }
 .content{
+    width: 1000px;
     display: grid;
+    margin: 10px auto;
 }
 .checkBox{
 	display: flex;
