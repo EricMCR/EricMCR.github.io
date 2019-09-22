@@ -3,7 +3,7 @@ window.onload=function(){
   if (username != "" && username != null){
    $("#login").css("display","none");
    $("#status_username").html(username);
-   $("#login_status").css("display","block");
+   $("#login_status").css("display","flex");
  }
 
   //加载头像
