@@ -2,16 +2,41 @@
 <html lang="en">
 <head>
 	{% include head.html %}
-	<link rel="stylesheet" type="text/css" href="/assets/css/default.js">
+	<link rel="stylesheet" type="text/css" href="/assets/css/default.css">
 	<script type="text/javascript" src="/assets/js/default.js"></script>
 </head>
 <body>
 	{% include header.html %}
-	<div class="content">
-		<h1>{{page.title}}</h1>
-		<p>作者: {{page.author}}  时间: {{ page.date | date_to_long_string }} 标签: {{ page.tags | join:', ' }}</p>
-		<br>
-		{{ content  }}
+	<div id="top-img">
+		<img src="/assets/images/top.jpg">
+	</div>
+	<div id="content">
+		<div id="top">
+			<div id="left">
+				<p>备注</p>
+			</div>
+			<div id="right">
+				<p>版块: <span id="category">{{ page.category }}</span></p>
+				<p>作者: <span id="author">{{ page.author }}</span></p>
+			</div>
+		</div>
+		<div id="main">
+			<div id="left">
+				<div id="content">
+					<p>时间: <br>{{ page.date | date_to_long_string }} <br>标签: <br>{{ page.tags | join:', ' }}</p>
+				</div>
+			</div>
+			<div id="right">
+				<div id="content">
+					<h1>{{page.title}}</h1>
+					<br>
+					<hr>
+					<br>
+					{{ content  }}
+				</div>
+			</div>
+		</div>
+
 	</div>
 </body>
 </html>
