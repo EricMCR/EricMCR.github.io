@@ -26,6 +26,8 @@ window.onload=function(){
   if (getCookie("remember_status") == "true"){
   	$("#rememberpw").prop("checked",true);
   }
+
+  onload2();
 }
 
 //获取cookie信息

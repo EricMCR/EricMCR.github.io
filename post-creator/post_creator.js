@@ -1,4 +1,4 @@
-window.onload = function () {
+function onload2 () {
 	var he = HE.getEditor('content',{
 		autoHeight : true,
 		autoFloat : false,
@@ -82,7 +82,7 @@ window.onload = function () {
 	})
 
 	changeDot();
-};
+}
 
 //在GitHub库中创建文件
 function creatFile(file_name,file_content,author,tags){
