@@ -1,2 +1,3 @@
 baseurl: /EricMCR.github.io
 paginate: 5
+paginate_path: "EricMCR.github.io/knowledge-base/page:num"
