@@ -1,5 +1,5 @@
-window.onload=function(){
-    $("#right p").html(getCategory());
+function onload2(){
+	$("#right p").html(getCategory());
 }
 
 function getCategory(){
