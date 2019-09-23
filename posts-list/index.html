@@ -37,7 +37,7 @@ title: 文章列表
 		<hr>
 		<div id="posts-box">
 			{% for post in site.posts %}
-			<div class="post">
+			<div class="post" onclick="window.open('{{ post.url }}')">
 				<div class="post-info">
 					<p class="title">标题：{{ post.title }}</p>
 					<p class="excerpt">文章开头一小段文字。。。。。。。</p>
