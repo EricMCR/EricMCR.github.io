@@ -1,145 +1,119 @@
 ---
-title: 知识库
 ---
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	{% include head.html %}
-	<link rel="stylesheet" type="text/css" href="knowledge-base.css">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>知识库</title>
+    <link href="knowledge_base.css" type="text/css" rel="stylesheet"/>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
 </head>
 <body>
-{% include header.html %}
-<div id="categories-box">
-	<div class="category-box" id="category-box1" onclick="window.location.href='../posts-list/?Java'">
-		<p>Java</p>
-		<hr>
-		<p>Ch</p>
-	</div>
-	<div class="category-box" id="category-box2" onclick="window.location.href='../posts-list/?C++'">
-		<p>C++</p>
-		<hr>
-		<p>Ch</p>
-	</div>
-	<div class="category-box" id="category-box3" onclick="window.location.href='../posts-list/?Database'">
-		<p>Database</p>
-		<hr>
-		<p>Ch</p>
-	</div>
-	<div class="category-box" id="category-box4" onclick="window.location.href='../posts-list/?Web Page'">
-		<p>Web Page</p>
-		<hr>
-		<p>Ch</p>
-	</div>
-	<div class="category-box" id="category-box5" onclick="window.location.href='../posts-list/?PHP'">
-		<p>PHP</p>
-		<hr>
-		<p>Ch</p>
-	</div>
-	<div class="category-box" id="category-box6" onclick="window.location.href='../posts-list/?Server'">
-		<p>Server</p>
-		<hr>
-		<p>Ch</p>
-	</div>
+<div class="header">
+    <img src="../images/知识库/u132.png" id="logo1" />
+    <a href="../">主页</a>
 </div>
-<div id="about-us">
-	<div id="top">
-		<div id="title">
-			<div id="left" class="title">
-				<p>ABOUT</p>
-				<p>US</p>
-			</div>
-			<div id="right" class="title">
-				<p>关于我们</p>
-			</div>
-		</div>
-		<hr>
-	</div>
-	<div id="intro">
-		<div id="members-intro">
-			<div class="member-box">
-				<img src="/assets/images/avatar.jpg">
-				<div class="member-info">
-					<div class="member-name">
-						<p>成员姓名</p>
-					</div>
-					<div class="member-intro">
-						<p>个人介绍：Londoners are under starter's orders as the city gets ready for the Olympic Games, which will begin one year today.To mark the start of the 366-day countdown (2012 is a leap year), special events are planned for today.</p>
-					</div>
-				</div>
-			</div>
-			<div class="member-box">
-				<img src="/assets/images/avatar.jpg">
-				<div class="member-info">
-					<div class="member-name">
-						<p>成员姓名</p>
-					</div>
-					<div class="member-intro">
-						<p>个人介绍：Londoners are under starter's orders as the city gets ready for the Olympic Games, which will begin one year today.To mark the start of the 366-day countdown (2012 is a leap year), special events are planned for today.</p>
-					</div>
-				</div>
-			</div>
-			<div class="member-box">
-				<img src="/assets/images/avatar.jpg">
-				<div class="member-info">
-					<div class="member-name">
-						<p>成员姓名</p>
-					</div>
-					<div class="member-intro">
-						<p>个人介绍：Londoners are under starter's orders as the city gets ready for the Olympic Games, which will begin one year today.To mark the start of the 366-day countdown (2012 is a leap year), special events are planned for today.</p>
-					</div>
-				</div>
-			</div>
-			<div class="member-box">
-				<img src="/assets/images/avatar.jpg">
-				<div class="member-info">
-					<div class="member-name">
-						<p>成员姓名</p>
-					</div>
-					<div class="member-intro">
-						<p>个人介绍：Londoners are under starter's orders as the city gets ready for the Olympic Games, which will begin one year today.To mark the start of the 366-day countdown (2012 is a leap year), special events are planned for today.</p>
-					</div>
-				</div>
-			</div>
-			<div class="member-box">
-				<img src="/assets/images/avatar.jpg">
-				<div class="member-info">
-					<div class="member-name">
-						<p>成员姓名</p>
-					</div>
-					<div class="member-intro">
-						<p>个人介绍：Londoners are under starter's orders as the city gets ready for the Olympic Games, which will begin one year today.To mark the start of the 366-day countdown (2012 is a leap year), special events are planned for today.</p>
-					</div>
-				</div>
-			</div>
-			<div class="member-box">
-				<img src="/assets/images/avatar.jpg">
-				<div class="member-info">
-					<div class="member-name">
-						<p>成员姓名</p>
-					</div>
-					<div class="member-intro">
-						<p>个人介绍：Londoners are under starter's orders as the city gets ready for the Olympic Games, which will begin one year today.To mark the start of the 366-day countdown (2012 is a leap year), special events are planned for today.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div id="lab-intro">
-			<div class="title">
-				<p>关于401</p>
-			</div>
-			<hr>
-			<div class="lab-info">
-				<p>Londoners are under starter's orders as the city gets ready for the Olympic Games, which will begin one year today.To mark the start of the 366-day countdown (2012 is a leap year), special events are planned for today.</p>
-			</div>
-			<img src="/assets/images/img7.jpg">
-		</div>
-	</div>
+<div class="content">
+    <div class="shop">
+        <div class="up">
+            <img src="../images/知识库/u137.png"/>
+        </div>
+        <div class="middle">
+            <div id="avatar_box">
+                <img src="" id="avatar">
+            </div>
+            <div class="introduction">
+               <div class="myName"><p>昵称</p></div>
+               <div class="myInfo"><p>相关个人信息相关个人信息相关个人信息相关个人信息相关个人信息相关个人信息相关个人信息相关个人信息相关个人信息</p></div>
+            </div>
+        </div>
+        <div class="down">
+            <ul id="nav">
+                <li class="selected"><a href="#">知识库</a></li>
+                <li><a href="#">个人库</a></li>
+                <div id="search">
+                    <input id="search_content" type="text" placeholder="请输入搜索内容"/>
+                    <img src="../images/知识库/u151.png" id="search_submit" />
+                </div>
+                <div id="creat"><p>发 布</p></div>
+            </ul>
+        </div>
+    </div>
+    <div id="Dom">
+        <div class="k-dom">
+            <ul id="k-area">
+                {% assign tags = "HTML" %}
+                {% for post in site.posts %}
+                
+                <li class="k-part" onclick="window.open('{{ post.url }}')">
+                    <div class="basic-information">
+                        <img src="../images/知识库/u168.png">
+                        <div class="name"><p>{{ post.author }}</p></div>
+                        <div class="topic"><p>{{ post.title }}</p></div>
+                        <div class="time"><p>发布时间:{{ post.date | date_to_string }} </p></div>
+                    </div>
+                    <div class="concrete-information">
+
+                    </div>
+                    <div class="download-information">
+                        <p>标签: {{ post.tags | join:', ' }}</p>
+                    </div>
+                </li>
+                
+                {% endfor %}
+            </ul>
+            <div class="page-control">
+                <div class="page-up"><p>&#8249</p></div>
+                <div class="page-box">
+                    
+                </div>
+                <div class="page-down"><p>&#8250</p></div>
+            </div>
+        </div>
+        <div class="p-dom">
+            <div class="option">
+                <div class="pub-history">
+                    <a href="#">发布历史</a>
+                </div>
+                <div class="pub-content">
+                    <a href="https://github.com/" target="view_window">发布内容</a>
+                </div>
+            </div>
+            <div class="p-parts">
+                <ul>
+                    <li class="p-part">
+                        <div class="basic-information">
+                            <img src="../images/知识库/u168.png">
+                            <div class="topic"><p>标题</p></div>
+                            <div class="time"><p>发布时间</p></div>
+                        </div>
+                        <div class="concrete-information">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget.</p>
+                        </div>
+                        <div class="download-information">
+                            <p>下载链接</p>
+                        </div>
+                    </li>
+                    <li class="p-part">
+                        <div class="basic-information">
+                            <img src="../images/知识库/u168.png">
+                            <div class="topic"><p>标题</p></div>
+                            <div class="time"><p>发布时间</p></div>
+                        </div>
+                        <div class="concrete-information">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget.</p>
+                        </div>
+                        <div class="download-information">
+                            <p>下载链接</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
-<div id="main-title">
-	<p>KNOWLEDGE</p>
-	<p>&nbsp&nbsp&nbsp&nbspBASE</p>
-	<hr>
-	<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp知识库</p>
-</div>
+<script type="text/javascript" src="knowledge_base.js"></script>
 </body>
 </html>
