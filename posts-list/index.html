@@ -43,8 +43,8 @@ title: 文章列表
 					<p class="excerpt">文章开头一小段文字。。。。。。。</p>
 				</div>
 				<div class="post-date">
-					<p class="day">{{ date:"%D"}}</p>
-					<p class="month">{{ date:"%Y"}}/09</p>
+					<p class="day">{{ post.date | date:"%D"}}</p>
+					<p class="month">{{ post.date | date:"%Y"}}/09</p>
 				</div>
 			</div>
 			{% endfor %}
