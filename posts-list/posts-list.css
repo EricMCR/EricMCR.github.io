@@ -115,6 +115,7 @@ input,button{
 	align-items: center;
 	border-radius: 10px;
 	background-color: #FAFAFA;
+	cursor: pointer;
 }
 #list #posts-box .post:hover{
 	background-color: #F2F2F2;
