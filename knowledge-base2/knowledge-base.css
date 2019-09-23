@@ -21,7 +21,7 @@ body{
 	flex-direction: column;
 	justify-content: center;
 	cursor: pointer;
-	box-shadow: 0 0 10px #848484;
+	box-shadow: 0 0 5px #848484;
 }
 #categories-box #category-box1{
 	background: url(/assets/images/img1.jpg) no-repeat;
