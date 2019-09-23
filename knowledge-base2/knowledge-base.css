@@ -27,27 +27,27 @@ body{
 	justify-content: center;
 }
 #categories-box #category-box1{
-	background: url(image/img1.jpg) no-repeat;
+	background: url(assets/images/img1.jpg) no-repeat;
 	background-size: cover;
 }
 #categories-box #category-box2{
-	background: url(image/img2.jpg) no-repeat;
+	background: url(assets/images/img2.jpg) no-repeat;
 	background-size: cover;
 }
 #categories-box #category-box3{
-	background: url(image/img3.jpg) no-repeat;
+	background: url(assets/images/img3.jpg) no-repeat;
 	background-size: cover;
 }
 #categories-box #category-box4{
-	background: url(image/img4.jpg) no-repeat;
+	background: url(assets/images/img4.jpg) no-repeat;
 	background-size: cover;
 }
 #categories-box #category-box5{
-	background: url(image/img5.jpg) no-repeat;
+	background: url(assets/images/img5.jpg) no-repeat;
 	background-size: cover;
 }
 #categories-box #category-box6{
-	background: url(image/img6.jpg) no-repeat;
+	background: url(assets/images/img6.jpg) no-repeat;
 	background-size: cover;
 }
 #categories-box .category-box hr{
