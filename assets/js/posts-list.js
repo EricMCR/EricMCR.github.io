@@ -1,5 +1,5 @@
 function onload2(){
-	$("#right p").html(getCategory());
+
 }
 
 function getCategory(){
