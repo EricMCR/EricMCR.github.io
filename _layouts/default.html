@@ -23,7 +23,7 @@
 		<div id="main">
 			<div id="left">
 				<div id="content">
-					<p>时间: <br>{{ page.date | date_to_long_string }} <br>标签: <br>{{ page.tags | join:', ' }}</p>
+					<p>时间: <br>{{ page.date | date:"%Y.%m.%d %H:%M:%S" }} <br>标签: <br>{{ page.tags | join:', ' }}</p>
 				</div>
 			</div>
 			<div id="right">
