@@ -36,9 +36,10 @@ title: 文章列表
 		</div>
 		<hr>
 		<div id="posts-box">
+			{% for post in site.posts %}
 			<div class="post">
 				<div class="post-info">
-					<p class="title">标题：XXXXXXX</p>
+					<p class="title">标题：{{ post.title }}</p>
 					<p class="excerpt">文章开头一小段文字。。。。。。。</p>
 				</div>
 				<div class="post-date">
