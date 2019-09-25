@@ -37,7 +37,7 @@ function onload2 () {
 	// 			var reader = new FileReader();
 	// 			reader.readAsText(file);
 	// 			reader.onloadstart = function(){
-	// 				$("#wait_box").css("display","block");
+	// 				$("#wait_box1").css("display","block");
 	// 			}
 	// 			reader.onload = function(){
 	// 				creatFile(splitFileName(file.name),reader.result,username,tags);
@@ -75,7 +75,7 @@ function onload2 () {
 			}else if (IsNullOrWhitespace(content)){
 				alert("请输入内容！");
 			}else{
-				$("#wait_box").css("display","block");
+				$("#wait_box1").css("display","block");
 				creatFile(title,content,username,tags);
 			}
 		}
@@ -113,11 +113,11 @@ function creatFile(file_name,file_content,author,tags){
 		},
 		data: JSON.stringify(json),
 		success:function(data){
-			$("#wait_box p").html("创建成功！3秒后自动<a href='../knowledge-base/'>跳转</a>至知识库...");
+			$("#wait_box1 p").html("创建成功！3秒后自动<a href='../knowledge-base/'>跳转</a>至知识库...");
 			setTimeout(function(){window.location.href="../knowledge-base/"},3000);
 		},
 		error:function(err){
-			$("#wait_box p").html("创建失败！"+err);
+			$("#wait_box1 p").html("创建失败！"+err);
 			setTimeout(function(){location.reload()},3000);
 		}
 	})

@@ -44,7 +44,7 @@ textarea{
     font-size: 20px;
     resize: none;
 }
-#wait_box{
+#wait_box1{
     padding: 0px auto;
     width: 300px;
     height: 40px;
@@ -65,7 +65,7 @@ textarea{
     top: 260px;
     display: none;
 }
-#wait_box p{
+#wait_box1 p{
     margin: 8px 10px;
     font-size: 16px;
 }
