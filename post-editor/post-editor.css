@@ -14,6 +14,11 @@ textarea{
     display: grid;
     margin: 10px auto;
 }
+.content #category_checkbox{
+    width: 100px;
+    font-size: 16px;
+    height: 30px;
+}
 .checkBox{
 	display: flex;
 }
