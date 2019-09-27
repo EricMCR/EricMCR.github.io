@@ -54,6 +54,7 @@ function onload2 () {
 		}else{
 			he.sync();
 			var title = $("#title").val();
+			var category = $("#category_checkbox").val();
 			var content = $("#content").val();
 			var options = $(".tagName:checked");
 			var tags = new Array();
@@ -76,7 +77,7 @@ function onload2 () {
 				alert("请输入内容！");
 			}else{
 				$("#wait_box1").css("display","block");
-				creatFile(title,content,username,tags);
+				creatFile(title,category,content,username,tags);
 			}
 		}
 	})
@@ -85,18 +86,26 @@ function onload2 () {
 }
 
 //在GitHub库中创建文件
-function creatFile(file_name,file_content,author,tags){
+function creatFile(file_name,category,file_content,author,tags){
 	var token = "RXJpY01DUjpNYTFDaGFvMlJhbjM=";
+
+	//获取当前时间并将其格式化：YEAR-MONTH-DAY HH:MM:SS
 	var now = new Date();
 	var time = now.getFullYear()+"-"+("0"+(now.getMonth()+1)).slice(-2)+"-"+("0"+now.getDate()).slice(-2)+" "+("0"+(now.getHours())).slice(-2)+":"+("0"+(now.getMinutes())).slice(-2)+":"+("0"+(now.getSeconds())).slice(-2);
+
+	//构建格式化的文件名：YEAR-MONTH-DAY-TITLE-AUTHOR.md
 	var name = now.getFullYear()+"-"+("0"+(now.getMonth()+1)).slice(-2)+"-"+("0"+now.getDate()).slice(-2)+"-"+file_name+"-"+author+".md";
 
+    //构建格式化的标签
 	var tagsToString = "\ntags:";
 	for (let i = 0; i<tags.length;i++){
 		tagsToString += "\n- " + tags[i];
 	}
 
-	file_content = "---\nlayout: default\ntitle: "+file_name+"\nauthor: "+author+"\ndate: "+time+tagsToString+"\n---\n" + file_content;
+    //将头信息构建并连接进文章内容
+	file_content = "---\nlayout: default\ntitle: "+file_name+"\ncategory: "+category+"\nauthor: "+author+"\ndate: "+time+tagsToString+"\n---\n" + file_content;
+
+	//将文件内容转码
 	var content = window.btoa(unescape(encodeURIComponent( file_content)));
 	console.log("name:"+name);
 	console.log("content:\n"+file_content);
