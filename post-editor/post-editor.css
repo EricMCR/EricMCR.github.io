@@ -13,18 +13,25 @@ textarea{
     width: 1000px;
     display: grid;
     margin: 10px auto;
+    align-items: center;
+    grid-template-rows: 60px 50px 50px auto 50px;
 }
 .content #category_checkbox{
     width: 100px;
     font-size: 16px;
     height: 30px;
 }
-.checkBox{
+.content .checkBox{
 	display: flex;
+    align-items: center;
 }
-.options{
+.content .checkBox .options{
 	display: flex;
     margin: auto 0px;
+    align-items: center;
+}
+.content .checkBox .options .tagName{
+    margin-left: 10px;
 }
 .HandyEditor{
 	z-index: 0;
