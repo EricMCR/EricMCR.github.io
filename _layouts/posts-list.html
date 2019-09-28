@@ -39,7 +39,7 @@
 			<div class="post" onclick="window.open('{{ post.url }}')">
 				<div class="post-info">
 					<p class="title">标题：{{ post.title }}</p>
-					<p class="excerpt">{{ post.excerpt | remove: '<p>' | remove: '</p>' }}</p>
+					<p class="excerpt">{{ post.excerpt }}</p>
 				</div>
 				<div class="post-date">
 					<p class="day">{{ post.date | date:"%d"}}</p>

@@ -7,6 +7,7 @@ title: 文章列表
 	{% include head.html %}
 	<link rel="stylesheet" type="text/css" href="posts-list.css">
     <script type="text/javascript" src="posts-list.js"></script>
+    <script src="/Simple-Jekyll-Search-1.7.0/dest/simple-jekyll-search.min.js"></script>
 </head>
 <body>
 	{% include header.html %}
@@ -20,12 +21,13 @@ title: 文章列表
 				<p>21</p>
 			</div>
 			<div id="search-box">
-				<input type="text" name="search" id="search">
+				<input type="text" name="search" id="search-input">
 				<button>搜索</button>
 			</div>
 		</div>
 	</div>
 	<div id="list">
+		<div id="results-container"></div>
 		<div id="title">
 			<div id="left" class="title">
 				<p>KNOWLEDGE BASE</p>
