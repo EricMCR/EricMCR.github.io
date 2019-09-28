@@ -136,8 +136,8 @@ input,button{
 #list #posts-box .post .post-info .title{
     font-size: 23px;
 }
-#list #posts-box .post .post-info .excerpt{
-	font-size: 16px;
+#list #posts-box .post .post-info .excerpt *{
+	font-size: 10px;
 }
 #list #posts-box .post .post-date{
 	width: 15%;
