@@ -1,10 +1,10 @@
 function onload2(){
 	$("#right p").html(getCategory());
 	SimpleJekyllSearch({
-  "search-input": document.getElementById('search-input'),
+  searchInput: document.getElementById('search-input'),
   resultsContainer: document.getElementById('results-container'),
-  "json": '/search.json',
-  "searchResultTemplate": '<li><a href="{{ site.url }}{url}">{title}</a></li>'
+  json: '/search.json',
+  searchResultTemplate: '<li><a href="{{ site.url }}{url}">{title}</a></li>'
 })
 }
 
