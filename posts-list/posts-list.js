@@ -3,7 +3,7 @@ function onload2(){
 	SimpleJekyllSearch({
   searchInput: document.getElementById('search-input'),
   resultsContainer: document.getElementById('results-container'),
-  json: '/search.json',
+  json: '/search.html',
   searchResultTemplate: '<li><a href="{{ site.url }}{url}">{title}</a></li>'
 })
 }
