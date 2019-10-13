@@ -11,7 +11,10 @@ function onload2 () {
 	// 	lang : 'zh-jian',
 	// });
 
-    var mditor =  new mditor(document.getElementById('content'));
+    var mditor =  new mditor(document.getElementById('content'),{
+  //自定义显示效果class
+  previewClass : 'article'
+});
 	var username = getCookie("username");
 	var isLogined = (username != "" && username != null);
 	// $("#submit1").click(function(){
