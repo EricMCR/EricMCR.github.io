@@ -1,16 +1,17 @@
 function onload2 () {
-	var he = HE.getEditor('content',{
-		autoHeight : true,
-		autoFloat : false,
-		uploadPhoto : true,
-		uploadPhotoHandler : 'php/uploadPhoto.php',
-		uploadPhotoSize : 0,
-		uploadPhotoType : 'gif,png,jpg,jpeg',
-		uploadPhotoSizeError : '不能上传大于××KB的图片',
-		uploadPhotoTypeError : '只能上传gif,png,jpg,jpeg格式的图片',
-		lang : 'zh-jian',
-	});
+	// var he = HE.getEditor('content',{
+	// 	autoHeight : true,
+	// 	autoFloat : false,
+	// 	uploadPhoto : true,
+	// 	uploadPhotoHandler : 'php/uploadPhoto.php',
+	// 	uploadPhotoSize : 0,
+	// 	uploadPhotoType : 'gif,png,jpg,jpeg',
+	// 	uploadPhotoSizeError : '不能上传大于××KB的图片',
+	// 	uploadPhotoTypeError : '只能上传gif,png,jpg,jpeg格式的图片',
+	// 	lang : 'zh-jian',
+	// });
 
+    var mditor =  Mditor.fromTextarea(document.getElementById('content'));
 	var username = getCookie("username");
 	var isLogined = (username != "" && username != null);
 	// $("#submit1").click(function(){
