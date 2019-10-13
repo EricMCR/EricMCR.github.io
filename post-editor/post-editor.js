@@ -52,13 +52,11 @@ function onload2 () {
 	$("#submit2").click(function(){
 		if (!isLogined){
 			alert("请先登录！");
-			console.log("content:/n"+mditor.value);
-
 		}else{
 			//he.sync();
 			var title = $("#title").val();
 			var category = $("#category_checkbox").val();
-			var content = mditor.getContent();
+			var content = mditor.value;
 			var options = $(".tagName:checked");
 			var tags = new Array();
 
