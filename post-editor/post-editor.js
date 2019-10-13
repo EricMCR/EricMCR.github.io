@@ -11,10 +11,7 @@ function onload2 () {
 	// 	lang : 'zh-jian',
 	// });
 
-    var mditor =  new mditor(document.getElementById('content'),{
-  //自定义显示效果class
-  previewClass : 'article'
-});
+    var mditor =  Mditor.fromTextarea(document.getElementById('content'));
 	var username = getCookie("username");
 	var isLogined = (username != "" && username != null);
 	// $("#submit1").click(function(){
@@ -55,7 +52,7 @@ function onload2 () {
 	$("#submit2").click(function(){
 		if (!isLogined){
 			alert("请先登录！");
-			console.log("content:/n"+mditor.getContent());
+			console.log("content:/n"+mditor.value);
 
 		}else{
 			//he.sync();
