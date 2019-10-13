@@ -11,7 +11,7 @@ function onload2 () {
 	// 	lang : 'zh-jian',
 	// });
 
-    var mditor =  Mditor.fromTextarea(document.getElementById('content'));
+    var mditor =  new mditor(document.getElementById('content'));
 	var username = getCookie("username");
 	var isLogined = (username != "" && username != null);
 	// $("#submit1").click(function(){
