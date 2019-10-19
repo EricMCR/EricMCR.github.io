@@ -11,7 +11,11 @@ function onload2 () {
 	// 	lang : 'zh-jian',
 	// });
 
-    $("#content").val("欢迎使用Mditor\n======\nMditor是一个轻量级的markdown编辑器。取名自markdown + editor，用于实现页面markdown输入框的便利操作。\n##Markdown是什么\n> Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档，然后转换成格式丰富的HTML页面。    —— [维基百科](https://zh.wikipedia.org/wiki/Markdown)");
+    var urlParmStr = getURLParameter();
+    if (urlParmStr != false){
+    	urlParmStr += ".md";
+        $("#content").val();
+    }
     var mditor =  Mditor.fromTextarea(document.getElementById('content'));
     //mditor.insert("欢迎使用Mditor\n======\nMditor是一个轻量级的markdown编辑器。取名自markdown + editor，用于实现页面markdown输入框的便利操作。\n##Markdown是什么\n> Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档，然后转换成格式丰富的HTML页面。    —— [维基百科](https://zh.wikipedia.org/wiki/Markdown)");
 	var username = getCookie("username");
@@ -176,6 +180,14 @@ function splitFileName(text) {
 
 //判断字符串为空或全为空格
 function IsNullOrWhitespace(input) {
-    if (typeof input === 'undefined' || input == null) return true;
-    return !/\S/.test(input);
+	if (typeof input === 'undefined' || input == null) return true;
+	return !/\S/.test(input);
+}
+
+//获取url中的文件名参数
+function getURLParameter(){
+    var url = document.location.toString();//获取url地址
+    if (url.indexOf('?') == -1) return false;
+    var urlParmStr = url.slice(url.indexOf('?')+1);//获取问号后所有的字符串
+    return urlParmStr;
 }
