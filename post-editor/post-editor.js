@@ -213,6 +213,7 @@ function getPost(url){
 	return file_content;
 }
 
+//从文件内容中获取文章内容部分
 function getPostContent(file_content){
     return file_content.slice(file_content.indexOf("---",3)+4);
 }
