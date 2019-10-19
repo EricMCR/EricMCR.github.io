@@ -16,7 +16,7 @@ function onload2 () {
     if (urlParmStr != false){
     	urlParmStr += ".md";
     	var file_content = getPost("https://api.github.com/repos/EricMCR/EricMCR.github.io/contents/_posts/"+urlParmStr);
-        $("#content").val(file_content);
+        $("#content").val(getPostContent(file_content));
     }
     var mditor =  Mditor.fromTextarea(document.getElementById('content'));
     //mditor.insert("欢迎使用Mditor\n======\nMditor是一个轻量级的markdown编辑器。取名自markdown + editor，用于实现页面markdown输入框的便利操作。\n##Markdown是什么\n> Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档，然后转换成格式丰富的HTML页面。    —— [维基百科](https://zh.wikipedia.org/wiki/Markdown)");
@@ -194,6 +194,7 @@ function getURLParameter(){
     return urlParmStr;
 }
 
+//从GitHub仓库中获取指定文件的文件内容
 function getPost(url){
 	var file_content;
 	$.ajax({
@@ -210,4 +211,8 @@ function getPost(url){
 		}
 	})
 	return file_content;
+}
+
+function getPostContent(file_content){
+    return file_content.slice(file_content.indexOf("---",3)+3);
 }
