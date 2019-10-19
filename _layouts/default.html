@@ -20,7 +20,7 @@
 			<div id="right">
 				<p>版块: <span id="category">{{ page.category }}</span></p>
 				<p>作者: <span id="author">{{ page.author }}</span></p>
-				<div onclick="javascript:window.location.href='https://ericmcr.github.io/post-editor/{{ page.date | date: "%Y-%m-%d" }}'"><p>编辑</p></div>
+				<div onclick="javascript:window.location.href='https://ericmcr.github.io/post-editor/?{{ page.date | date: "%Y-%m-%d" }}-{{ page.title }}-{{ page.author }}'"><p>编辑</p></div>
 			</div>
 		</div>
 		<div id="main">
