@@ -214,5 +214,5 @@ function getPost(url){
 }
 
 function getPostContent(file_content){
-    return file_content.slice(file_content.indexOf("---",3)+3);
+    return file_content.slice(file_content.indexOf("---",3)+4);
 }
